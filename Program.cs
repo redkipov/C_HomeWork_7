@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Threading;
+
 //HomeWork 7 C#
 //Developer kipov.m.h
-//28.08.2022
+//29.08.2022
 
 namespace HomeWork2
 {
-
     class Program
     {
         ////////////Глобальные переменные////////////////
@@ -62,7 +62,6 @@ namespace HomeWork2
                     devWrite(NameProg);
                     Contin();
                 }
-
             }
         }
         ///////////////////////////////// Очистка экрана и вывод redkipov. ////////////////////////////////////////////////////////////
@@ -127,7 +126,6 @@ namespace HomeWork2
             double[,] array = new double[3,4] { { 0, 0, 0, 0 },
                                                 { 0, 0, 0, 0 },
                                                 { 0, 0, 0, 0 }};
-           
             ////////// Вывод меню и отслеживание нажатия кнопки для начала//////////////
             string NameProg = $"[1] {ProgramName_1}";
             devWrite(NameProg);
@@ -141,13 +139,8 @@ namespace HomeWork2
                 }
                 Console.ResetColor();
                 //))))))))))))))))) Logica (((((((((((((((((  
-                   array = ShuffleVi(array,115);  
-                //int[] UserNumbers = { 0, 0, 0, 0, 0 };
-                //int[] resultArrey = {0,0,0,0,0};
-                //int result = 0;
+                array = ShuffleVi(array,115);  
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                //Console.WriteLine("Введите 5 положительных и отрицательных чисел: ");
-                //Console.ForegroundColor = ConsoleColor.White;
                 devWrite(NameProg);
                 Console.WriteLine("Результат работы: ");
                 Console.WriteLine("Размер массива: [3,4]");
@@ -171,34 +164,6 @@ namespace HomeWork2
                         }
                     }
                 }
-                
-                
-              /*  for (int i = 0; i < 5; i++)
-                {
-                    Console.WriteLine($"Введите {i + 1}-e число: ");
-                    UserNumbers[i] = Convert.ToInt32(Console.ReadLine());
-                }
-                //
-                for (int i = 0; i < UserNumbers.Length; i++)
-                {
-                    if (UserNumbers[i] > 0)
-                    {
-                        result++;
-                    }
-                }
-             */
-                //))))))))))))))))) End Logica (((((((((((((((((
-                ////////............. Вывод результата .............//////
-                
-                //Console.WriteLine("Результат работы: ");
-                //Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                //Console.WriteLine($"Размер массива: {5}");
-                //Console.Write("Введенные числа: ");
-                //WriteArray(UserNumbers, 1);
-                //Console.Write("Количестово чисел больше zero: ");
-                //Console.ForegroundColor = ConsoleColor.DarkYellow;
-                //Console.WriteLine(result);
-                //Console.ForegroundColor = ConsoleColor.White;
                 Exit_Play = textWrite(Exit_Play, NameProg);
             }
         }
@@ -713,7 +678,7 @@ namespace HomeWork2
                 if (PresskeyP == "D1" || PresskeyP == "NumPad1")
                 {
                     LoadScrin = false;
-                    Console.CursorVisible = true;
+                    //Console.CursorVisible = true;
                     Program_1(Exit_Play); //запуск функции
                     LoadScrin = true;
                     WriteMenu(NameProg);
@@ -729,7 +694,7 @@ namespace HomeWork2
                 else if (PresskeyP == "D3" || PresskeyP == "NumPad3")
                 {
                     LoadScrin = false;
-                    Console.CursorVisible = true;
+                    //Console.CursorVisible = true;
                     Program_3(Exit_Play); //запуск функции
                     LoadScrin = true;
                     WriteMenu(NameProg);
@@ -763,6 +728,7 @@ namespace HomeWork2
             }
         }
 
+        
         static void WriteMenu(String NameProg)
         {
             WelcomeWrite(NameProg);
@@ -770,10 +736,11 @@ namespace HomeWork2
             Method();
         }
 
+        ///// BETA
         static async void Method()
         {
             int k = 0;
-            char[] LoadString = {'/' ,'/', '/', '/', '/', '/', '/' };
+            char[] LoadString = {'/' ,'/', '/', '/', '/', '/', '/', '/', '/', '/' };
             ///////////////////////////////////////////////// Task 1
             await Task.Run(() =>
             {
@@ -794,8 +761,9 @@ namespace HomeWork2
                     //Console.Write($"{Time} ");
                 }
                 else if (!LoadScrin) {return;}
-
+                Console.ForegroundColor = ConsoleColor.Red;
                 for (int i = 0; i < k; i++) { Console.Write(LoadString[i]); if (k==LoadString.Length+1) {k = 0;} }
+                Console.ForegroundColor = ConsoleColor.White;
             }
             //await Task.Run(() => Program_7(1) );
         }
