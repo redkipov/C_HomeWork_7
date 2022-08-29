@@ -111,7 +111,7 @@ namespace HomeWork2
             Console.ForegroundColor = ConsoleColor.Yellow; // желтый цвет
             Console.WriteLine(ProgramName_5); */
             ///////////////////////////////////////////////////////////
-            Console.Write("Нажмите - ");
+            Console.Write("\nНажмите - ");
             Console.ForegroundColor = ConsoleColor.Blue; // синий цвет
             Console.Write("Q, End, Escape ");
             Console.ForegroundColor = ConsoleColor.Green; // зеленый цвет
@@ -728,7 +728,7 @@ namespace HomeWork2
             }
         }
 
-        
+
         static void WriteMenu(String NameProg)
         {
             WelcomeWrite(NameProg);
@@ -757,8 +757,8 @@ namespace HomeWork2
                     //Thread.Sleep(1000);
                     Console.Write($"                                                 \r");
                     Console.CursorVisible = false;
-                    //var Time = DateTime.Now;
-                    //Console.Write($"{Time} ");
+                    var Time = DateTime.Now;
+                    Console.Write($"{Time}      ");
                 }
                 else if (!LoadScrin) {return;}
                 Console.ForegroundColor = ConsoleColor.Red;
